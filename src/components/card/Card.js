@@ -1,16 +1,19 @@
 import "./card.css"
 
+//ポケモンごとの展示カードコンポーネントの作成
 
-function Card({pokemon}) {
+function Card({ pokemon }) {
     return(
         <div className="card">
         <div className="cardImg">
+            {/* pokemonのsprites属性のfront_default属性に入ったポケモン画像データのURLをsrcに与える */}
             <img src={pokemon.sprites.front_default} alt="ポケモンの画像"/>
         </div>
             <h3 className="cardName">{pokemon.name}</h3>
             <div className="cardType">
                 <div>タイプ</div>
-                {pokemon.types.map((type,index)=>{
+                {/* 複数属性を持つポケモンも存在するためmapメソッドで属性を抽出する */}
+                {pokemon.types.map((type)=>{
                     return (
                         <div key={type.type.name} >
                             <span className="typeName">{type.type.name}</span>

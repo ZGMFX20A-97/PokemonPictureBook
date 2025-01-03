@@ -1,17 +1,19 @@
-export const getAllPokemon=(url)=>{
-    return new Promise((resolve,reject)=>{
+export const getAllPokemon = (url) => {
+
+    return new Promise((resolve,reject) => {
         fetch(url)
-            .then(res=>res.json())
-            .then(data=>resolve(data));
+            .then(res => res.json())
+            .then(data => resolve(data));
     })
 
 }
 
-export const getPokemon=(url)=>{
+//詳細のポケモンデータを取得するための関数
+export const getPokemon=(url) => {
     return new Promise((resolve,reject)=>{
         fetch(url)
-            .then(res=>res.json())
-            .then(data=>resolve(data));
+            .then(res => res.json())
+            .then(data => resolve(data));
     })
 
 }
